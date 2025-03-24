@@ -12,23 +12,23 @@ const TodoItem = ({ todo, onToggle, onDelete, onEdit }) => {
   };
 
   return (
-    <div className="flex items-center justify-between p-4 mb-2 rounded-lg border bg-white shadow-md">
+    <div className="flex items-start p-4 mb-2 rounded-lg border bg-white shadow-md space-x-3">
       {isEditing ? (
         <input
           type="text"
           value={editedText}
           onChange={(e) => setEditedText(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSave()}
-          className="flex-1 p-2 border rounded-lg mr-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 min-w-0 p-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
           autoFocus
         />
       ) : (
-        <span className={`flex-1 text-lg ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'}`}>
+        <span className={`flex-1 min-w-0 overflow-hidden text-ellipsis break-words text-lg ${todo.completed ? 'line-through text-gray-500' : 'text-gray-800'}`}>
           {todo.text}
         </span>
       )}
 
-      <div className="flex space-x-2">
+      <div className="flex-shrink-0 flex space-x-2">
         {!isEditing ? (
           <>
             <button
