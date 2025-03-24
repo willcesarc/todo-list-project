@@ -1,40 +1,20 @@
-# Aplicativo Lista de Tarefas
+# To-Do List com React + Tailwind CSS
 
-Aplicativo de gerenciamento de tarefas construído com React e Tailwind CSS.
+Aplicação de lista de tarefas desenvolvida como teste técnico, com funcionalidades básicas e deploy automatizado.
 
 ## Funcionalidades
 
-### Gerenciamento de Tarefas
 - Adicionar novas tarefas
-- Marcar tarefas como concluídas/desfazer
-- Editar texto das tarefas 
-- Excluir tarefas
-- Limpar todas as tarefas (com confirmação)
-
-### Layout
-- Visualização em duas colunas ("A Fazer" e "Feito")
-- Design responsivo
-- Código de cores intuitivo:
-  - Azul: Ações principais
-  - Laranja: Edição
-  - Verde: Concluir/Desfazer
-  - Vermelho: Excluir
-
-## Como Usar
-
-1. **Adicionar tarefa**:
-   Digite no campo de texto e clique em "Adicionar"
-
-2. **Editar tarefa (novo)**:
-   Clique em "Editar" → Modifique o texto → "Salvar"
-
-3. **Limpar todas**:
-   Clique em "Limpar Tudo" → Confirme no diálogo
+- Marcar tarefas como concluídas
+- Visualização separada em "A Fazer" e "Feito"
+- Layout responsivo (mobile/desktop)
 
 ## Tecnologias
-- React
+
+- React (Vite)
 - Tailwind CSS
-- Vite
+- Git/GitHub
+- Deploy: Vercel
 
 ## Como Executar
 
@@ -49,3 +29,9 @@ Aplicativo de gerenciamento de tarefas construído com React e Tailwind CSS.
 
 4. Acesse no navegador:
    http://localhost:5173
+
+
+## Demo Online
+
+Acesse a versão em produção:  
+[https://todo-list-project-git-main-willcesarc.vercel.app]
