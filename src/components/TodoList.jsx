@@ -23,8 +23,14 @@ function TodoList() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const handleEdit = (id, newText) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? { ...todo, text: newText } : todo
+    ));
+  };
+
   return (
-    <div className="max-w-4xl w-full mx-auto p-4 relative">
+    <div className="max-w-4xl w-full mx-auto p-4">
       <div className="flex gap-4 mb-4">
         <input
           type="text"
@@ -82,6 +88,7 @@ function TodoList() {
               todo={todo}
               onToggle={toggleTodo}
               onDelete={deleteTodo}
+              onEdit={handleEdit}
             />
           ))}
         </div>
@@ -93,6 +100,7 @@ function TodoList() {
               todo={todo}
               onToggle={toggleTodo}
               onDelete={deleteTodo}
+              onEdit={handleEdit}
             />
           ))}
         </div>
