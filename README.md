@@ -1,12 +1,40 @@
-# Todo List - React
+# Aplicativo Lista de Tarefas
 
-Aplicação básica de lista de tarefas com funcionalidades essenciais.
+Aplicativo de gerenciamento de tarefas construído com React e Tailwind CSS.
 
 ## Funcionalidades
 
+### Gerenciamento de Tarefas
 - Adicionar novas tarefas
-- Marcar tarefas como concluídas
+- Marcar tarefas como concluídas/desfazer
+- Editar texto das tarefas 
 - Excluir tarefas
+- Limpar todas as tarefas (com confirmação)
+
+### Layout
+- Visualização em duas colunas ("A Fazer" e "Feito")
+- Design responsivo
+- Código de cores intuitivo:
+  - Azul: Ações principais
+  - Laranja: Edição
+  - Verde: Concluir/Desfazer
+  - Vermelho: Excluir
+
+## Como Usar
+
+1. **Adicionar tarefa**:
+   Digite no campo de texto e clique em "Adicionar"
+
+2. **Editar tarefa (novo)**:
+   Clique em "Editar" → Modifique o texto → "Salvar"
+
+3. **Limpar todas**:
+   Clique em "Limpar Tudo" → Confirme no diálogo
+
+## Tecnologias
+- React
+- Tailwind CSS
+- Vite
 
 ## Como Executar
 
@@ -21,16 +49,3 @@ Aplicação básica de lista de tarefas com funcionalidades essenciais.
 
 4. Acesse no navegador:
    http://localhost:5173
-
-## Tecnologias Utilizadas
-
-- React (biblioteca front-end)
-- Tailwind CSS (estilização)
-- Vite (ambiente de desenvolvimento)
-
-## Melhorias Planejadas
-
-- Mudança do metodo de conclusão de tarefas
-- Organizar tarefas em colunas separadas
-- Adicionar edição de tarefas
-- Melhorar a responsividade
