@@ -6,7 +6,7 @@ export default function TodoList() {
 
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
-    alert(`Tarefa adicionada: ${newTask}`);
+    setTasks([...tasks, { id: Date.now(), text: newTask }]);
     setNewTask('');
   };
 
@@ -26,6 +26,13 @@ export default function TodoList() {
         >
           Add
         </button>
+      </div>
+      <div className="mt-4 space-y-2">
+        {tasks.map(task => (
+          <div key={task.id} className="p-3 border rounded">
+            {task.text}
+          </div>
+        ))}
       </div>
     </div>
   );
