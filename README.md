@@ -1,12 +1,36 @@
-# React + Vite
+# Todo List - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação básica de lista de tarefas com funcionalidades essenciais.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar novas tarefas
+- Marcar tarefas como concluídas
+- Excluir tarefas
 
-## Expanding the ESLint configuration
+## Como Executar
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone o projeto:
+   git clone https://github.com/willcesarc/todo-list-project.git
+
+2. Instale as dependências:
+   npm install
+
+3. Inicie a aplicação:
+   npm run dev
+
+4. Acesse no navegador:
+   http://localhost:5173
+
+## Tecnologias Utilizadas
+
+- React (biblioteca front-end)
+- Tailwind CSS (estilização)
+- Vite (ambiente de desenvolvimento)
+
+## Melhorias Planejadas
+
+- Mudança do metodo de conclusão de tarefas
+- Organizar tarefas em colunas separadas
+- Adicionar edição de tarefas
+- Melhorar a responsividade
