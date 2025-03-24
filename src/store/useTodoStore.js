@@ -16,7 +16,7 @@ const useTodoStore = create(
       deleteTodo: (id) => set((state) => ({
         todos: state.todos.filter(todo => todo.id !== id)
       })),
-      clearTodos: () => set({ todos: [] }, true)
+      clearTodos: () => set({ todos: [] })
     }),
     {
       name: 'todo-storage',
