@@ -1,79 +1,72 @@
-import { useState } from 'react';
+import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
-export default function TodoList() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState('');
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 
-  const addTask = () => {
-    if (newTask.trim() === '') return;
-    setTasks([...tasks, { 
-      id: Date.now(), 
-      text: newTask, 
-      completed: false 
-    }]);
-    setNewTask('');
+  const addTodo = () => {
+    if (newTodo.trim() !== "") {
+      setTodos([...todos, { id: Date.now(), text: newTodo, completed: false }]);
+      setNewTodo("");
+    }
   };
 
-  const toggleTask = (id) => {
-    setTasks(
-      tasks.map(task =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
   };
 
-  const deleteTask = (id) => {
-    setTasks(tasks.filter(task => task.id !== id));
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
-      <div className="flex mb-4">
+    <div className="max-w-4xl w-full mx-auto p-4">
+      <div className="flex gap-4 mb-4">
         <input
           type="text"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && addTask()}
-          placeholder="Digite uma tarefa..."
-          className="flex-1 p-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-blue-400"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          className="flex-1 p-2 border rounded-lg text-gray-800"
+          placeholder="Nova tarefa..."
         />
         <button
-          onClick={addTask}
-          className="bg-blue-500 text-white px-4 rounded-r hover:bg-blue-600 transition-colors"
+          onClick={addTodo}
+          className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
-          Add
+          Adicionar
         </button>
       </div>
 
-      <div className="space-y-2">
-        {tasks.map(task => (
-          <div 
-            key={task.id} 
-            className="flex items-center p-3 border rounded hover:bg-gray-50"
-          >
-
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTask(task.id)}
-              className="h-5 w-5 mr-3 rounded border-gray-300 text-blue-500 focus:ring-blue-400"
+      <div className="grid grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-xl font-bold mb-2 text-white">A Fazer</h2>
+          {todos.filter(todo => !todo.completed).map(todo => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
             />
-            
-            <span 
-              className={`flex-1 ${task.completed ? 'line-through text-gray-400' : 'text-gray-800'}`}
-            >
-              {task.text}
-            </span>
-            
-            <button
-              onClick={() => deleteTask(task.id)}
-              className="text-red-500 hover:text-red-700 p-1 rounded-full hover:bg-red-50"
-            >
-              ✕
-            </button>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div>
+          <h2 className="text-xl font-bold mb-2 text-white">Feito</h2>
+          {todos.filter(todo => todo.completed).map(todo => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
+export default TodoList;
