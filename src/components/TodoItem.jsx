@@ -34,7 +34,7 @@ const TodoItem = ({ todo, onToggle, onDelete, onEdit }) => {
             <button
               onClick={() => onToggle(todo.id)}
               className={`p-2 rounded-lg text-white ${
-                todo.completed ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-green-500 hover:bg-green-600'
+                todo.completed ? 'bg-emerald-500 hover:bg-emerald-600' : 'bg-emerald-500 hover:bg-emerald-600'
               }`}
             >
               {todo.completed ? 'Desfazer' : 'Concluir'}

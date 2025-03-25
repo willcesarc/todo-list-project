@@ -3,7 +3,7 @@ import useTodoStore from '../store/useTodoStore';
 import TodoItem from './TodoItem';
 
 function TodoList() {
-  const { todos, addTodo, toggleTodo, deleteTodo, clearTodos } = useTodoStore();
+  const { todos, addTodo, toggleTodo, deleteTodo, editTodo, clearTodos } = useTodoStore();
   const [newTodo, setNewTodo] = useState('');
   const [showModal, setShowModal] = useState(false);
 
@@ -77,6 +77,7 @@ function TodoList() {
                 todo={todo}
                 onToggle={toggleTodo}
                 onDelete={deleteTodo}
+                onEdit={editTodo}
               />
             ))}
           </div>
@@ -90,6 +91,7 @@ function TodoList() {
                 todo={todo}
                 onToggle={toggleTodo}
                 onDelete={deleteTodo}
+                onEdit={editTodo}
               />
             ))}
           </div>
